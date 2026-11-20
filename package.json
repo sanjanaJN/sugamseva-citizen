@@ -1,0 +1,24 @@
+{
+  "name": "sugam-seva",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sugam Seva scheme recommendation service",
+  "type": "module",
+  "scripts": {
+    "start": "npm run db:migrate && npm run import:schemes -- ./approved-schemes.json && node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:migrate": "node server/migrate.js",
+    "import:schemes": "node server/import-schemes.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.13.1",
+    "tesseract.js": "^7.0.0"
+  }
+}
